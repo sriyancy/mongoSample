@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mongodb = require('mongodb');
 var mongoClient = mongodb.MongoClient;
-var mongoURL="mongodb://localhost:27017";
+var mongoURL="mongodb://admin:India2020@172.30.75.153:27017";
 const dbname = "sampledb";
 
 
