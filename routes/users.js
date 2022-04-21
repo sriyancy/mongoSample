@@ -10,25 +10,25 @@ const dbname = "sampledb";
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/db', function(req, res, next) {
- mongoClient.connect(mongoURL,(err,res)=>{
-   if(err){
-     console.log("error connecting db");
-   }
-   else{
-     const db = res.db(dbname);
-     db.collection("catalog").find({}).toArray((err,res)=>{
-       if(err){
-         console.log('err in collection')
-       }
-       else{
-         console.log(res)
-       }
-     });
-     res.close();
-   }
- })
-});
+// router.get('/db', function(req, res, next) {
+//  mongoClient.connect(mongoURL,(err,res)=>{
+//    if(err){
+//      console.log("error connecting db");
+//    }
+//    else{
+//      const db = res.db(dbname);
+//      db.collection("catalog").find({}).toArray((err,res)=>{
+//        if(err){
+//          console.log('err in collection')
+//        }
+//        else{
+//          console.log(res)
+//        }
+//      });
+//      res.close();
+//    }
+//  })
+// });
 
 
 
