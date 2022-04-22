@@ -10,12 +10,14 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 router.get('/db', function(req, res, next) {
+  console.log('inside db.....')
   mongoClient.connect(mongoURL,(err,res)=>{
     if(err){
       console.log("error connecting db");
     }
     else{
       const db = res.db(dbname);
+      console.log('db connected name ::',db)
       db.collection("catalog").find({}).toArray((err,res)=>{
         if(err){
           console.log('err in collection')
